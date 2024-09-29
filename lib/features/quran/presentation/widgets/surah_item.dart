@@ -25,11 +25,11 @@ class SurahItem extends StatelessWidget {
           size: 18,
           color: AppColors.black,
         ),
-        const HorizontalSpacer(width: 16),
+        const HorizontalSpacer(width: 14),
         context.read<QuranCubit>().allSurahs[index].type == "Medinan"
             ? const SurahTypeContainer(type: "مدنية")
             : const SurahTypeContainer(type: "مكية"),
-        const HorizontalSpacer(width: 20),
+        const HorizontalSpacer(width: 14),
         const Spacer(),
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -44,10 +44,11 @@ class SurahItem extends StatelessWidget {
                   .read<QuranCubit>()
                   .allSurahs[index]
                   .englishTranslationName,
+              overflow: TextOverflow.ellipsis,
             ),
           ],
         ),
-        const HorizontalSpacer(width: 24),
+        const HorizontalSpacer(width: 20),
         Container(
           width: 28.w,
           height: 28.h,

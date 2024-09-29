@@ -32,12 +32,16 @@ class CustomGrid extends StatelessWidget {
               CustomGridTile(
                 imagePath: sectionImage[1],
                 text: sectionTitles[1],
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, RoutesConstants.doaaView);
+                },
               ),
               CustomGridTile(
                 imagePath: sectionImage[2],
                 text: sectionTitles[2],
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, RoutesConstants.azkarView);
+                },
               ),
             ],
           ),
@@ -52,7 +56,9 @@ class CustomGrid extends StatelessWidget {
               CustomGridTile(
                 imagePath: sectionImage[4],
                 text: sectionTitles[4],
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, RoutesConstants.asmaaAllahView);
+                },
               ),
               CustomGridTile(
                 imagePath: sectionImage[5],
@@ -67,7 +73,9 @@ class CustomGrid extends StatelessWidget {
               CustomGridTile(
                 imagePath: sectionImage[6],
                 text: sectionTitles[6],
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, RoutesConstants.sebhaView);
+                },
               ),
               CustomGridTile(
                 imagePath: sectionImage[7],

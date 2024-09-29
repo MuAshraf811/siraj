@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:siraj/core/styles/text_styles.dart';
 import 'package:siraj/core/utils/constants/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
@@ -54,7 +55,7 @@ class CustomButton extends StatelessWidget {
             sufix ??
                 Text(
                   text,
-                  style: TextStyle(
+                  style: getMediumStyle(
                     fontSize: fontSize ?? 16,
                     color: textColor ?? AppColors.white,
                   ),
