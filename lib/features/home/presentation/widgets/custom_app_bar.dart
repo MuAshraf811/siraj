@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/styles/text_styles.dart';
 import '../../../../core/utils/constants/app_assets.dart';
 import '../../../../core/utils/constants/app_colors.dart';
-import '../../../../core/utils/functions/functions.dart';
 import '../../../../core/widgets/spacers.dart';
 import '../../../../core/widgets/svg_handler.dart';
 
@@ -17,23 +16,21 @@ class CustomSliverAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      backgroundColor: AppColors.primary,
+      shape: const Border(
+        bottom: BorderSide(
+          color: AppColors.primary,
+        ),
+      ),
       systemOverlayStyle: const SystemUiOverlayStyle(
         systemNavigationBarColor: AppColors.primary,
         statusBarColor: AppColors.primary,
         statusBarIconBrightness: Brightness.light,
       ),
-      shape: Border(
-        bottom: BorderSide(
-          color: getthemecolor(context),
-        ),
-      ),
-      elevation: 10,
-      shadowColor: AppColors.white,
-      surfaceTintColor: AppColors.white,
-      backgroundColor: AppColors.primary,
       floating: true,
       collapsedHeight: 50.h,
-      expandedHeight: 128.h,
+      toolbarHeight: 50.h,
+      expandedHeight: 112.h,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
         centerTitle: true,

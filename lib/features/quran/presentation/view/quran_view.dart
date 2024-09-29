@@ -23,7 +23,7 @@ class QuranView extends StatelessWidget {
                   itemCount: 604,
                   controller: PageController(
                     initialPage: page ?? 1,
-                    viewportFraction: 0.73.w,
+                    viewportFraction: 0.85.w,
                   ),
                   scrollDirection: Axis.vertical,
                   itemBuilder: (context, index) =>

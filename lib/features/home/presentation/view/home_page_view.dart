@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:siraj/features/home/presentation/widgets/custom_app_bar.dart';
 import 'package:siraj/features/home/presentation/widgets/home_grid.dart';
+
 import '../../../../core/widgets/spacers.dart';
+import '../widgets/custom_app_bar.dart';
 import '../widgets/prayer_times_part.dart';
 import '../widgets/random_allah_name_container.dart';
 import '../widgets/random_doaa_container.dart';

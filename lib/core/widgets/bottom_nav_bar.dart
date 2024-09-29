@@ -19,14 +19,14 @@ class CustomNavBAr extends StatelessWidget {
       builder: (context, state) {
         return BottomNavigationBar(
           type: BottomNavigationBarType.shifting,
-          elevation: 16,
+          elevation: 12,
           currentIndex: context.read<NavBArCubit>().state,
           onTap: (value) => context.read<NavBArCubit>().changeIndex(value),
           items: [
             BottomNavigationBarItem(
                 icon: Container(
                   width: 100.w,
-                  height: 36.h,
+                  height: 32.h,
                   padding: EdgeInsets.only(left: 12.w, top: 2.h),
                   margin: EdgeInsets.only(top: 6.h),
                   decoration: BoxDecoration(
@@ -38,7 +38,7 @@ class CustomNavBAr extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.home_filled,
-                        size: 25,
+                        size: 23,
                         color: context.read<NavBArCubit>().state == 0
                             ? AppColors.primary
                             : AppColors.blackText,
@@ -47,7 +47,7 @@ class CustomNavBAr extends StatelessWidget {
                       Text(
                         'الرئيسية',
                         style: getSemiBoldStyle(
-                          fontSize: 16,
+                          fontSize: 15,
                           color: context.read<NavBArCubit>().state == 0
                               ? AppColors.primary
                               : AppColors.blackText,
@@ -60,7 +60,7 @@ class CustomNavBAr extends StatelessWidget {
             BottomNavigationBarItem(
                 icon: Container(
                   width: 100.w,
-                  height: 36.h,
+                  height: 32.h,
                   padding: EdgeInsets.only(left: 12.w, top: 2.h),
                   margin: EdgeInsets.only(top: 6.h),
                   decoration: BoxDecoration(
@@ -71,12 +71,13 @@ class CustomNavBAr extends StatelessWidget {
                   child: Row(
                     children: [
                       SvgHandler(
-                          imagePath: 'assets/svgs/kaaba-solid-svgrepo-com.svg',
-                          color: context.read<NavBArCubit>().state == 1
-                              ? AppColors.primary
-                              : AppColors.blackText,
-                          height: 18,
-                          width: 18),
+                        imagePath: 'assets/svgs/kaaba-solid-svgrepo-com.svg',
+                        color: context.read<NavBArCubit>().state == 1
+                            ? AppColors.primary
+                            : AppColors.blackText,
+                        height: 17,
+                        width: 18,
+                      ),
                       const HorizontalSpacer(width: 6),
                       Text(
                         'القبلة',
@@ -92,40 +93,41 @@ class CustomNavBAr extends StatelessWidget {
                 ),
                 label: ""),
             BottomNavigationBarItem(
-                icon: Container(
-                  width: 100.w,
-                  height: 36.h,
-                  padding: EdgeInsets.only(left: 12.w, top: 2.h),
-                  margin: EdgeInsets.only(top: 6.h),
-                  decoration: BoxDecoration(
+              icon: Container(
+                width: 100.w,
+                height: 32.h,
+                padding: EdgeInsets.only(left: 12.w, top: 2.h),
+                margin: EdgeInsets.only(top: 6.h),
+                decoration: BoxDecoration(
+                    color: context.read<NavBArCubit>().state == 2
+                        ? AppColors.primary.withOpacity(0.3)
+                        : null,
+                    borderRadius: BorderRadius.circular(6.r)),
+                child: Row(
+                  children: [
+                    SvgHandler(
+                      imagePath: 'assets/svgs/profile-nav.svg',
+                      height: 17,
                       color: context.read<NavBArCubit>().state == 2
-                          ? AppColors.primary.withOpacity(0.3)
-                          : null,
-                      borderRadius: BorderRadius.circular(6.r)),
-                  child: Row(
-                    children: [
-                      SvgHandler(
-                        imagePath: 'assets/svgs/profile-nav.svg',
-                        height: 18,
+                          ? AppColors.primary
+                          : AppColors.blackText,
+                      width: 18,
+                    ),
+                    const HorizontalSpacer(width: 6),
+                    Text(
+                      'الإعدادات',
+                      style: getSemiBoldStyle(
+                        fontSize: 15,
                         color: context.read<NavBArCubit>().state == 2
                             ? AppColors.primary
                             : AppColors.blackText,
-                        width: 18,
                       ),
-                      const HorizontalSpacer(width: 6),
-                      Text(
-                        'الإعدادات',
-                        style: getSemiBoldStyle(
-                          fontSize: 16,
-                          color: context.read<NavBArCubit>().state == 2
-                              ? AppColors.primary
-                              : AppColors.blackText,
-                        ),
-                      )
-                    ],
-                  ),
+                    )
+                  ],
                 ),
-                label: ""),
+              ),
+              label: "",
+            ),
           ],
         );
       },
