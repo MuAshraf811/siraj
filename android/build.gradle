@@ -5,7 +5,14 @@ allprojects {
     }
 }
 
-rootProject.buildDir = "../build"
+rootProject.buildDir = "../build" 
+subprojects{
+    afterEvaluate {
+        android {
+            namespace "com.example.siraj"
+        }
+    }
+}
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }

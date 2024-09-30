@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:siraj/core/controllers/font/font_cubit.dart';
 import 'package:siraj/core/controllers/internet_chicker/internet_connection_checker_cubit.dart';
 import 'package:siraj/core/controllers/theme/theme_cubit.dart';
 import 'package:siraj/core/utils/router/app_router.dart';
@@ -20,6 +21,9 @@ class Siraj extends StatelessWidget {
         providers: [
           BlocProvider<ThemeCubit>(
             create: (context) => ThemeCubit(),
+          ),
+          BlocProvider<FontCubit>(
+            create: (context) => FontCubit(),
           ),
           BlocProvider<InternetConnectionCheckerCubit>(
             create: (context) =>
