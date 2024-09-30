@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:siraj/features/home/presentation/widgets/custom_search.dart';
 import '../../../../core/utils/constants/app_colors.dart';
 import '../../../../core/utils/functions/functions.dart';
 import '../../../../core/widgets/spacers.dart';
@@ -27,6 +28,9 @@ class SurahsView extends StatelessWidget {
             children: [
               CustomAppBar(
                 doAlso: () {},
+                onTap: () async {
+                  await showSearch(context: context, delegate: CustomSearch());
+                },
               ),
               const VerticalSpacer(height: 24),
               BlocBuilder<QuranCubit, QuranState>(

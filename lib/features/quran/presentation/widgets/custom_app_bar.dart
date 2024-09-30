@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:siraj/core/utils/constants/app_assets.dart';
-import 'package:siraj/features/home/presentation/widgets/custom_search.dart';
 import '../../../../core/utils/constants/app_colors.dart';
 import '../../../../core/widgets/custom_text_field.dart';
 import '../../../../core/widgets/spacers.dart';
@@ -11,9 +10,13 @@ class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
     super.key,
     this.doAlso,
+    this.label,
+    required this.onTap,
   });
   final VoidCallback? doAlso;
+  final VoidCallback onTap;
 
+  final String? label;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -46,13 +49,8 @@ class CustomAppBar extends StatelessWidget {
         SizedBox(
           width: 255.w,
           child: CustomTextFormField(
-            label: "البحث عن سورة",
-            onTap: () async {
-              await showSearch(
-                context: context,
-                delegate: CustomSearch(),
-              );
-            },
+            label: label ?? "البحث عن سورة",
+            onTap: onTap,
             fillColor: AppColors.textFieldFillColor.withOpacity(0.6),
             borderRaduis: 14,
             prefixIcon: const SvgHandler(

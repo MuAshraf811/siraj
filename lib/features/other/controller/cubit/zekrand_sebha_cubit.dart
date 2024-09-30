@@ -10,6 +10,7 @@ part 'zekrand_sebha_state.dart';
 class ZekrandSebhaCubit extends Cubit<ZekrandSebhaState> {
   late List<AzkarModel> azkrMOdel;
   List<InnerAzkar>? someZekr;
+  late List<AzkarModel> filteredZekr;
   String? someZekrCategoryName;
   DoaaModel? somedoaa;
   AsmaaAllahModel? someName;
@@ -17,6 +18,18 @@ class ZekrandSebhaCubit extends Cubit<ZekrandSebhaState> {
   late List<AsmaaAllahModel> asmaaAllah;
   late List<DoaaModel> doaa;
   ZekrandSebhaCubit() : super(ZekrandSebhaInitial());
+
+  void filterSurahsOnSearch(String query) {
+    if (query.isEmpty) {
+      filteredZekr = List.from(azkrMOdel);
+    } else {
+      filteredZekr = azkrMOdel.where(
+        (zekr) {
+          return zekr.category.contains(query);
+        },
+      ).toList();
+    }
+  }
 
   void getDoaa() async {
     try {

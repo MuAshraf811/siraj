@@ -51,7 +51,9 @@ class CustomGrid extends StatelessWidget {
               CustomGridTile(
                 imagePath: sectionImage[3],
                 text: sectionTitles[3],
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, RoutesConstants.nawawyView);
+                },
               ),
               CustomGridTile(
                 imagePath: sectionImage[4],
@@ -80,7 +82,9 @@ class CustomGrid extends StatelessWidget {
               CustomGridTile(
                 imagePath: sectionImage[7],
                 text: sectionTitles[7],
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, RoutesConstants.hadithView);
+                },
               ),
               CustomGridTile(
                 imagePath: sectionImage[8],

@@ -3,6 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:siraj/core/controllers/nav_b_ar_cubit.dart';
 import 'package:siraj/core/utils/constants/routes_path_constants.dart';
+import 'package:siraj/features/hadith/presentation/cubit/hadith_cubit.dart';
+import 'package:siraj/features/hadith/presentation/view/hadith_view.dart';
+import 'package:siraj/features/hadith/presentation/view/nawawy_view.dart';
 import 'package:siraj/features/home/controller/home_cubit.dart';
 import 'package:siraj/features/other/controller/cubit/zekrand_sebha_cubit.dart';
 import 'package:siraj/features/other/controller/provider/sebha_provider.dart';
@@ -58,6 +61,21 @@ class AppRouter {
             child: const AzkarView(),
           ),
         );
+      case RoutesConstants.hadithView:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider<HadithCubit>(
+            create: (context) => HadithCubit()..getAllHAdithBooks(),
+            child: const HadithView(),
+          ),
+        );
+      case RoutesConstants.nawawyView:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider<HadithCubit>(
+            create: (context) => HadithCubit()..getNaway(),
+            child: const NawawyView(),
+          ),
+        );
+
       case RoutesConstants.sebhaView:
         return MaterialPageRoute(
           builder: (context) => ChangeNotifierProvider<SebhaProvider>(

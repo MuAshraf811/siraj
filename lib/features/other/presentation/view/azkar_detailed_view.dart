@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:siraj/core/styles/text_styles.dart';
 
 import '../../../../core/utils/constants/app_colors.dart';
 import '../../../../core/widgets/spacers.dart';
@@ -15,12 +16,14 @@ class AzkarDetailedView extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          padding: EdgeInsets.symmetric(horizontal: 18.w),
           child: Column(
             children: [
               const VerticalSpacer(height: 18),
               CustomAppBar(
+                label: "البحث عن ذكر ",
                 doAlso: () {},
+                onTap: () {},
               ),
               const VerticalSpacer(height: 16),
               BlocProvider(
@@ -39,7 +42,7 @@ class AzkarDetailedView extends StatelessWidget {
                               .length,
                           itemBuilder: (context, index) => Container(
                             padding: EdgeInsets.symmetric(
-                                horizontal: 12.w, vertical: 16.h),
+                                horizontal: 14.w, vertical: 12.h),
                             margin: EdgeInsets.only(bottom: 16.h),
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
@@ -52,7 +55,10 @@ class AzkarDetailedView extends StatelessWidget {
                                     .someZekr![index]
                                     .text,
                                 textAlign: TextAlign.center,
-                                style: const TextStyle(fontSize: 16),
+                                style: getSemiBoldStyle(
+                                  fontSize: 16,
+                                  color: AppColors.blackText,
+                                ),
                               ),
                             ),
                           ),

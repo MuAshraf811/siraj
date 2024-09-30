@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:siraj/core/styles/text_styles.dart';
+import 'package:siraj/features/other/presentation/widgets/custom_zekr_search.dart';
 import '../../../../core/utils/constants/app_colors.dart';
 import '../../../../core/widgets/spacers.dart';
 import '../../../quran/presentation/widgets/custom_app_bar.dart';
@@ -19,7 +21,12 @@ class AzkarView extends StatelessWidget {
           children: [
             const VerticalSpacer(height: 16),
             CustomAppBar(
+              label: " البحث عن ذكر",
               doAlso: () {},
+              onTap: () async {
+                await showSearch(
+                    context: context, delegate: CustomZekrSearch());
+              },
             ),
             const VerticalSpacer(height: 22),
             BlocBuilder<ZekrandSebhaCubit, ZekrandSebhaState>(
@@ -63,9 +70,8 @@ class AzkarView extends StatelessWidget {
                                 .read<ZekrandSebhaCubit>()
                                 .azkrMOdel[index]
                                 .category,
-                            style: const TextStyle(
+                            style: getSemiBoldStyle(
                               fontSize: 18,
-                              fontWeight: FontWeight.w500,
                               color: AppColors.white,
                             ),
                           ),
