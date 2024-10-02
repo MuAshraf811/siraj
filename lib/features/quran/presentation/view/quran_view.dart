@@ -18,12 +18,13 @@ class QuranView extends StatelessWidget {
             const QuranAppBar(),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 2.w),
+                padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 4.h),
                 child: PageView.builder(
                   itemCount: 604,
+                  physics: const CarouselScrollPhysics(),
                   controller: PageController(
                     initialPage: page ?? 1,
-                    viewportFraction: 0.85.w,
+                    viewportFraction: 1.w,
                   ),
                   scrollDirection: Axis.vertical,
                   itemBuilder: (context, index) =>
@@ -43,23 +44,9 @@ class QuranOnePageItem extends StatelessWidget {
   final int pageIndex;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        InteractiveViewer(
-          maxScale: 3,
-          minScale: 0.25,
-          panEnabled: true,
-          child: Image.asset(
-            'assets/images/quran1/${pageIndex + 1}.png',
-          ),
-        ),
-        const VerticalSpacer(height: 4),
-        Divider(
-          endIndent: 32.w,
-          indent: 32.w,
-          color: AppColors.primary,
-        ),
-      ],
+    return Image.asset(
+      'assets/images/quran1/${pageIndex + 1}.png',
+      fit: BoxFit.contain,
     );
   }
 }

@@ -13,6 +13,9 @@ import 'package:siraj/features/other/presentation/view/asmaa_allah.dart';
 import 'package:siraj/features/other/presentation/view/azkar_view.dart';
 import 'package:siraj/features/other/presentation/view/doaa_view.dart';
 import 'package:siraj/features/other/presentation/view/sebha_view.dart';
+import 'package:siraj/features/radio_sallah/presentation/cubit/sallah_and_radio_cubit.dart';
+import 'package:siraj/features/radio_sallah/presentation/view/prey_time_view.dart';
+import 'package:siraj/features/radio_sallah/presentation/view/radio_view.dart';
 import '../../../features/home/presentation/view/home_view.dart';
 import '../../../features/quran/presentation/view/surahs_view.dart';
 
@@ -59,6 +62,20 @@ class AppRouter {
           builder: (context) => BlocProvider<ZekrandSebhaCubit>(
             create: (context) => ZekrandSebhaCubit()..initAzkarjson(),
             child: const AzkarView(),
+          ),
+        );
+      case RoutesConstants.preyTimesView:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider<SallahAndRadioCubit>(
+            create: (context) => SallahAndRadioCubit()..getAllPreyTime(),
+            child: const PreyTimeView(),
+          ),
+        );
+      case RoutesConstants.radioView:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider<SallahAndRadioCubit>(
+            create: (context) => SallahAndRadioCubit()..handleRadio(),
+            child: const RadioView(),
           ),
         );
       case RoutesConstants.hadithView:

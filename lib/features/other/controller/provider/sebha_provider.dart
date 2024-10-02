@@ -8,9 +8,15 @@ class SebhaProvider with ChangeNotifier {
   int countSallah = 0;
   int countTasbeh = 0;
   int countTesbehKamel = 0;
+  int allahIsGod = 0;
 
   void estghfer() {
     countEsghfar++;
+    notifyListeners();
+  }
+
+  void allahGod() {
+    allahIsGod++;
     notifyListeners();
   }
 
@@ -56,6 +62,11 @@ class SebhaProvider with ChangeNotifier {
 
   void resetHawkel() {
     countHowkala = 0;
+    notifyListeners();
+  }
+
+  void resetsebhaofAllah() {
+    allahIsGod = 0;
     notifyListeners();
   }
 

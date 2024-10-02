@@ -1,7 +1,5 @@
 // ignore_for_file: unused_local_variable
-
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_compass/flutter_compass.dart';
@@ -9,7 +7,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qibla_direction/qibla_direction.dart';
 import 'package:siraj/core/widgets/snack_bar.dart';
 import 'package:siraj/features/qibla/controller/qibla_cubit.dart';
-
 import '../../../../core/utils/constants/app_colors.dart';
 import '../../../../core/widgets/spacers.dart';
 import '../../../../core/widgets/svg_handler.dart';

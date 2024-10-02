@@ -128,10 +128,10 @@ class SebhaList extends StatelessWidget {
               zekr: ' لا إله إلا الله ',
               count: value.countHowkala,
               onRebeat: () {
-                Provider.of<SebhaProvider>(context, listen: false).hawkel();
+                Provider.of<SebhaProvider>(context, listen: false).allahGod();
               },
               onReset: () => Provider.of<SebhaProvider>(context, listen: false)
-                  .resetHawkel(),
+                  .resetsebhaofAllah(),
             ),
             Image.asset(
               'assets/images/Frame 48.png',

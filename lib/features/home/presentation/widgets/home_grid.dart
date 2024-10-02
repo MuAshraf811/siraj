@@ -65,7 +65,9 @@ class CustomGrid extends StatelessWidget {
               CustomGridTile(
                 imagePath: sectionImage[5],
                 text: sectionTitles[5],
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, RoutesConstants.preyTimesView);
+                },
               ),
             ],
           ),
@@ -89,7 +91,9 @@ class CustomGrid extends StatelessWidget {
               CustomGridTile(
                 imagePath: sectionImage[8],
                 text: sectionTitles[8],
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, RoutesConstants.radioView);
+                },
               ),
             ],
           ),
