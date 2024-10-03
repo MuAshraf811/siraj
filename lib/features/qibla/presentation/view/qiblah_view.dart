@@ -64,7 +64,6 @@ class _QiblahViewState extends State<QiblahView> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const VerticalSpacer(height: 24),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.w),
                 child: Stack(
@@ -74,8 +73,8 @@ class _QiblahViewState extends State<QiblahView> {
                       angle: heading * (pi / 180) * -1,
                       child: SvgHandler(
                         imagePath: 'assets/svgs/compass.svg',
-                        height: height / 2.2,
-                        width: width / 1.2,
+                        height: height / 2.6,
+                        width: width / 1.4,
                         color: AppColors.primary,
                       ),
                     ),
@@ -86,14 +85,13 @@ class _QiblahViewState extends State<QiblahView> {
                         child: SvgHandler(
                           imagePath: 'assets/svgs/needle.svg',
                           height: height / 3.4,
-                          width: width / 1.2,
+                          width: width / 1.4,
                         ),
                       ),
                     ),
                   ],
                 ),
               ),
-              const VerticalSpacer(height: 16),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -102,7 +100,7 @@ class _QiblahViewState extends State<QiblahView> {
                           color: AppColors.primary,
                           fontSize: 18,
                           fontWeight: FontWeight.bold)),
-                  const VerticalSpacer(height: 14),
+                  const VerticalSpacer(height: 10),
                   const Text(
                     "المسافة إلي مكة بالكيلومتر",
                     style: TextStyle(color: AppColors.blackText, fontSize: 18),

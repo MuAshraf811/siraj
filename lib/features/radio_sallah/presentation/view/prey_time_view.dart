@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:siraj/core/styles/text_styles.dart';
 import 'package:siraj/features/radio_sallah/presentation/cubit/sallah_and_radio_cubit.dart';
 
 import '../../../../core/controllers/internet_chicker/internet_connection_checker_cubit.dart';
@@ -28,28 +29,38 @@ class PreyTimeView extends StatelessWidget {
                 text:
                     "إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَوْقُوتًا",
               ),
-              const VerticalSpacer(height: 22),
-              const VerticalSpacer(height: 12),
+              const VerticalSpacer(height: 18),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
                     DateTime.now().year.toString(),
-                    style: const TextStyle(fontSize: 16),
+                    style: getSemiBoldStyle(
+                      fontSize: 20,
+                      color: AppColors.primary,
+                    ),
                   ),
                   const HorizontalSpacer(width: 10),
                   Text(
                     getMonthByItsOrder(DateTime.now().month),
+                    style: getSemiBoldStyle(
+                      fontSize: 20,
+                      color: AppColors.primary,
+                    ),
                   ),
                 ],
               ),
-              const VerticalSpacer(height: 12),
+              const VerticalSpacer(height: 24),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.w),
                 child: DropdownButtonFormField(
                   enableFeedback: false,
                   menuMaxHeight: MediaQuery.sizeOf(context).height / 1.8,
-                  value: egyptianGovernoratesEnglish[2],
+                  value: egyptianGovernorates[2],
+                  style: getSemiBoldStyle(
+                    fontSize: 16,
+                    color: AppColors.primary,
+                  ),
                   dropdownColor: AppColors.white,
                   onChanged: (val) {},
                   icon: const Icon(
@@ -66,7 +77,7 @@ class PreyTimeView extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8.r),
                         borderSide: const BorderSide(color: AppColors.primary)),
                   ),
-                  items: egyptianGovernoratesEnglish
+                  items: egyptianGovernorates
                       .map(
                         (e) => DropdownMenuItem(
                           value: e,
@@ -76,7 +87,7 @@ class PreyTimeView extends StatelessWidget {
                       .toList(),
                 ),
               ),
-              const VerticalSpacer(height: 12),
+              const VerticalSpacer(height: 36),
               BlocConsumer<InternetConnectionCheckerCubit,
                   InternetConnectionCheckerState>(
                 listener: (context, state) {
@@ -173,7 +184,8 @@ class PreyTimeView extends StatelessWidget {
                                               )),
                                               DataCell(Text(
                                                 !e.maghrib.contains('(EEST)')
-                                                    ? e.maghrib
+                                                    ? double.parse(e.maghrib)
+                                                        .toString()
                                                     : e.maghrib.substring(0, 6),
                                                 style: const TextStyle(
                                                   fontSize: 13,

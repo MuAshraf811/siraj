@@ -28,7 +28,6 @@ class HomeCubit extends Cubit<HomeState> {
   generateCustomAllahName() async {
     try {
       emit(RandomAsmState());
-      if (someName != null) {}
       final res = await rootBundle.loadString("assets/jsons/asmaa_allah.json");
       final List<dynamic> response = jsonDecode(res);
       final random = Random().nextInt(response.length - 1);
@@ -47,7 +46,6 @@ class HomeCubit extends Cubit<HomeState> {
   generateCustomDoaa() async {
     try {
       emit(RandomDoaaState());
-      if (somedoaa != null) {}
       final res = await rootBundle.loadString("assets/jsons/doaa.json");
       final List<dynamic> response = jsonDecode(res);
       final random = Random().nextInt(response.length - 1);
@@ -87,9 +85,7 @@ class HomeCubit extends Cubit<HomeState> {
     emit(RandomZekrState());
     try {
       emit(RandomZekrState());
-      if (someZekr != null) {
-        someZekr!.clear();
-      }
+
       final res = await rootBundle.loadString("assets/jsons/adhkar.json");
       final List<dynamic> response = jsonDecode(res);
       final random = Random().nextInt(response.length - 1);
