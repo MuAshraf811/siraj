@@ -7,6 +7,7 @@ class PreyTimesModelTwo {
   final String date;
   final String hijiriDate;
   final String weekDay;
+  final String monthDay;
 
   PreyTimesModelTwo({
     required this.fajr,
@@ -17,6 +18,7 @@ class PreyTimesModelTwo {
     required this.isha,
     required this.date,
     required this.hijiriDate,
+    required this.monthDay,
   });
 
   factory PreyTimesModelTwo.fromjson(Map<String, dynamic> json) {
@@ -29,6 +31,7 @@ class PreyTimesModelTwo {
       isha: json["timings"]["Isha"],
       date: json["date"]["gregorian"]["date"],
       hijiriDate: json["date"]["hijri"]["date"],
+      monthDay: json["date"]["hijri"]["month"]["ar"],
     );
   }
 }

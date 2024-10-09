@@ -14,3 +14,13 @@ final class ListingSurahsSuccessState extends QuranState {}
 final class FilteringSurah extends QuranState {}
 
 final class FilteredSurah extends QuranState {}
+
+final class LoadingAyahsState extends QuranState {}
+
+final class LoadedAyahsState extends QuranState {}
+
+final class ErrorAyahsState extends QuranState {
+  final String error;
+
+  ErrorAyahsState({required this.error});
+}

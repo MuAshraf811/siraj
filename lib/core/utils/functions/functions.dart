@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:siraj/features/radio_sallah/model/prey_times_model2.dart';
 
 import '../../controllers/theme/theme_cubit.dart';
 import '../constants/app_colors.dart';
@@ -215,4 +216,22 @@ String translateHadithName(String name) {
     default:
       return 'حدث خطأ ما';
   }
+}
+
+List<String> getCurrentAndNextPrey(
+    int currenthour, PreyTimesModelTwo sallahTimings) {
+  if (currenthour > 5 && currenthour < 12) {
+    return [sallahTimings.dhuhr, sallahTimings.asr];
+  }
+  if (currenthour > 1 && currenthour < 16) {
+    return [sallahTimings.asr, sallahTimings.maghrib];
+  }
+  if (currenthour > 16 && currenthour <= 18) {
+    return [sallahTimings.maghrib, sallahTimings.isha];
+  }
+  if (currenthour > 18 && currenthour < 20) {
+    return [sallahTimings.isha, sallahTimings.fajr];
+  }
+
+  return [sallahTimings.fajr, sallahTimings.dhuhr];
 }

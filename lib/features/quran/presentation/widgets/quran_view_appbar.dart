@@ -34,7 +34,6 @@ class QuranAppBar extends StatelessWidget {
           const Spacer(flex: 1),
           Container(
             height: 32.h,
-            width: MediaQuery.sizeOf(context).width / 1.8,
             padding: EdgeInsets.symmetric(horizontal: 8.w),
             alignment: Alignment.center,
             decoration: BoxDecoration(
@@ -45,9 +44,9 @@ class QuranAppBar extends StatelessWidget {
               text ??
                   'وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِنْ مُدَّكِرٍ',
               style: getSemiBoldStyle(
-                fontSize: 18,
+                fontSize: 14,
                 color: AppColors.primary,
-              ).copyWith(wordSpacing: 4),
+              ),
             ),
           ),
           const Spacer(flex: 1),

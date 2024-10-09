@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shimmer/shimmer.dart';
+import 'package:siraj/features/radio_sallah/presentation/cubit/sallah_and_radio_cubit.dart';
 
 import '../../../../core/styles/text_styles.dart';
 import '../../../../core/utils/constants/app_assets.dart';
@@ -82,12 +85,31 @@ class CustomSliverAppBar extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text(
-                        '  أغسطس - 12 جماد الأول',
-                        style: getMediumStyle(
-                          color: Colors.white,
-                          fontSize: 13.0,
-                        ),
+                      BlocBuilder<SallahAndRadioCubit, SallahAndRadioState>(
+                        buildWhen: (previous, current) =>
+                            current is GettingPreyTimeAtSigleDaySuccessState ||
+                            current is GettingPreyTimeAtSigleDayErrorState ||
+                            current is GettingPreyTimeAtSigleDayState,
+                        builder: (context, state) {
+                          if (state is GettingPreyTimeAtSigleDaySuccessState) {
+                            return Text(
+                              "${context.read<SallahAndRadioCubit>().listDateAtSingleDay[1]}  &  ${context.read<SallahAndRadioCubit>().listDateAtSingleDay[0]} ${context.read<SallahAndRadioCubit>().listDateAtSingleDay[2]}",
+                              style: getMediumStyle(
+                                color: Colors.white,
+                                fontSize: 14.0,
+                              ),
+                            );
+                          }
+                          return Shimmer.fromColors(
+                            highlightColor: AppColors.white,
+                            baseColor: AppColors.white.withOpacity(0.75),
+                            child: Container(
+                              width: 56.w,
+                              height: 12.h,
+                              color: AppColors.white.withOpacity(0.6),
+                            ),
+                          );
+                        },
                       ),
                       const HorizontalSpacer(width: 10),
                       const SvgHandler(

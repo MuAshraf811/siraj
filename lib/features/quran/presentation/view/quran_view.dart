@@ -24,7 +24,7 @@ class QuranView extends StatelessWidget {
                   physics: const CarouselScrollPhysics(),
                   controller: PageController(
                     initialPage: page ?? 1,
-                    viewportFraction: 1.w,
+                    viewportFraction: 1,
                   ),
                   scrollDirection: Axis.vertical,
                   itemBuilder: (context, index) =>

@@ -1,16 +1,38 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:siraj/features/quran/data/surah_model.dart';
+import 'package:siraj/features/test/model.dart';
 
 part 'quran_state.dart';
 
 class QuranCubit extends Cubit<QuranState> {
   late List<SurahModel> allSurahs;
+  late List<SurahJsonModel> ayahs;
+
   List<SurahModel> filteredSurahs = [];
   QuranCubit() : super(QuranInitial());
+
+  testQuranJson() async {
+    try {
+      emit(LoadingAyahsState());
+      final res = await rootBundle.loadString("assets/jsons/quran.json");
+      final List result = jsonDecode(res);
+      ayahs = result
+          .map(
+            (e) => SurahJsonModel.fromJson(e),
+          )
+          .toList();
+      emit(LoadedAyahsState());
+    } catch (e) {
+      log(e.toString());
+      emit(ErrorAyahsState(error: e.toString()));
+    }
+  }
+
   String removeArabicDiacritics(String text) {
     final diacriticRegex = RegExp(
       r'[\u064B-\u0652]',

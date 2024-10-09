@@ -6,6 +6,7 @@ import 'package:siraj/core/controllers/internet_chicker/internet_connection_chec
 import 'package:siraj/core/controllers/theme/theme_cubit.dart';
 import 'package:siraj/core/utils/router/app_router.dart';
 import 'package:siraj/features/quran/controller/quran_cubit.dart';
+import 'package:siraj/features/radio_sallah/presentation/cubit/sallah_and_radio_cubit.dart';
 
 class Siraj extends StatelessWidget {
   const Siraj({super.key});
@@ -30,7 +31,14 @@ class Siraj extends StatelessWidget {
                 InternetConnectionCheckerCubit()..checkInternetConnection(),
           ),
           BlocProvider<QuranCubit>(
-            create: (context) => QuranCubit()..loadSurah(),
+            create: (context) => QuranCubit()
+              ..loadSurah()
+              ..testQuranJson(),
+          ),
+          BlocProvider<SallahAndRadioCubit>(
+            create: (context) => SallahAndRadioCubit()
+              ..getAllPreyTime()
+              ..getPreyTimesAtCertinDay(),
           ),
         ],
         child: MaterialApp(

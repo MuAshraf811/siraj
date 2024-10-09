@@ -24,3 +24,13 @@ final class RadioErrorState extends SallahAndRadioState {
 
   RadioErrorState({required this.error});
 }
+
+final class GettingPreyTimeAtSigleDayState extends SallahAndRadioState {}
+
+final class GettingPreyTimeAtSigleDaySuccessState extends SallahAndRadioState {}
+
+final class GettingPreyTimeAtSigleDayErrorState extends SallahAndRadioState {
+  final String error;
+
+  GettingPreyTimeAtSigleDayErrorState({required this.error});
+}

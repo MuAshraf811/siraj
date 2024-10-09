@@ -80,3 +80,10 @@ List<String> arabAndMuslimCountries = [
   "Ivory Coast",
   "Guinea-Bissau"
 ];
+List<String> preyNames = [
+  "الفجر",
+  "الظهر",
+  "العصر",
+  "المغرب",
+  "العشاء",
+];
