@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:siraj/core/styles/text_styles.dart';
 import 'package:siraj/core/utils/constants/app_assets.dart';
-
 import '../../../../core/utils/constants/app_colors.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/spacers.dart';
@@ -29,6 +28,8 @@ class SebhaView extends StatelessWidget {
                   alignment: Alignment.topLeft,
                   child: InkWell(
                       onTap: () {
+                        Provider.of<SebhaProvider>(context, listen: false)
+                            .saveCounters();
                         Navigator.pop(context);
                       },
                       child: Icon(
@@ -126,7 +127,7 @@ class SebhaList extends StatelessWidget {
             ),
             SebhaItem(
               zekr: ' لا إله إلا الله ',
-              count: value.countHowkala,
+              count: value.allahIsGod,
               onRebeat: () {
                 Provider.of<SebhaProvider>(context, listen: false).allahGod();
               },

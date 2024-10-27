@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:siraj/core/controllers/font/font_cubit.dart';
 import 'package:siraj/core/controllers/internet_chicker/internet_connection_checker_cubit.dart';
 import 'package:siraj/core/controllers/theme/theme_cubit.dart';
+import 'package:siraj/core/services/storage/shared_preferences.dart';
 import 'package:siraj/core/utils/router/app_router.dart';
 import 'package:siraj/features/quran/controller/quran_cubit.dart';
 import 'package:siraj/features/radio_sallah/presentation/cubit/sallah_and_radio_cubit.dart';
@@ -40,11 +41,29 @@ class Siraj extends StatelessWidget {
               ..getAllPreyTime()
               ..getPreyTimesAtCertinDay(),
           ),
+          BlocProvider<ThemeCubit>(
+            create: (context) => ThemeCubit(),
+          ),
+          BlocProvider<FontCubit>(
+            create: (context) => FontCubit(),
+          ),
         ],
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          onGenerateRoute: AppRouter.generateRoute,
-          theme: ThemeData(),
+        child: BlocBuilder<FontCubit, int>(
+          builder: (context, state) {
+            return BlocBuilder<ThemeCubit, int>(
+              builder: (context, state) {
+                return MaterialApp(
+                  debugShowCheckedModeBanner: false,
+                  onGenerateRoute: AppRouter.generateRoute,
+                  theme: SharedPreferencesManager.getBool(key: "theme") == false
+                      ? ThemeData()
+                      : ThemeData(
+                          brightness: Brightness.dark,
+                        ),
+                );
+              },
+            );
+          },
         ),
       ),
     );

@@ -116,7 +116,7 @@ class PreyTimeView extends StatelessWidget {
                         if (state is FetchingPreyTimeSuccessState) {
                           return Container(
                             height: MediaQuery.sizeOf(context).height / 1.9,
-                            margin: EdgeInsets.symmetric(horizontal: 2.w),
+                            margin: EdgeInsets.symmetric(horizontal: 1.w),
                             decoration: const BoxDecoration(
                               border: Border(
                                   bottom:
@@ -141,7 +141,7 @@ class PreyTimeView extends StatelessWidget {
                                         topLeft: Radius.circular(12.r),
                                       ),
                                     ),
-                                    columnSpacing: 8.w,
+                                    columnSpacing: 6.w,
                                     dataRowMinHeight: 36.h,
                                     dataRowMaxHeight: 54.h,
                                     columns: const [

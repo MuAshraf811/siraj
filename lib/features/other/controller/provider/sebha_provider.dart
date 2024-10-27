@@ -1,14 +1,26 @@
 import 'package:flutter/foundation.dart';
+import 'package:siraj/core/services/storage/shared_preferences.dart';
+import 'package:siraj/core/utils/constants/storage_keys.dart';
 
 class SebhaProvider with ChangeNotifier {
-  int countEsghfar = 0;
-  int countTakber = 0;
-  int countHamed = 0;
-  int countHowkala = 0;
-  int countSallah = 0;
-  int countTasbeh = 0;
-  int countTesbehKamel = 0;
-  int allahIsGod = 0;
+  int countEsghfar = SharedPreferencesManager.getInt(key: sebha1);
+  int countTakber = SharedPreferencesManager.getInt(key: sebha2);
+  int countHamed = SharedPreferencesManager.getInt(key: sebha3);
+  int countHowkala = SharedPreferencesManager.getInt(key: sebha4);
+  int countSallah = SharedPreferencesManager.getInt(key: sebha5);
+  int countTasbeh = SharedPreferencesManager.getInt(key: sebha6);
+  int countTesbehKamel = SharedPreferencesManager.getInt(key: sebha7);
+  int allahIsGod = SharedPreferencesManager.getInt(key: sebha8);
+
+  saveCounters() {
+    SharedPreferencesManager.storeInt(key: sebha2, value: countTakber);
+    SharedPreferencesManager.storeInt(key: sebha3, value: countHamed);
+    SharedPreferencesManager.storeInt(key: sebha4, value: countHowkala);
+    SharedPreferencesManager.storeInt(key: sebha5, value: countSallah);
+    SharedPreferencesManager.storeInt(key: sebha6, value: countTasbeh);
+    SharedPreferencesManager.storeInt(key: sebha7, value: countTesbehKamel);
+    SharedPreferencesManager.storeInt(key: sebha8, value: allahIsGod);
+  }
 
   void estghfer() {
     countEsghfar++;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:siraj/core/controllers/font/font_cubit.dart';
 import 'package:siraj/core/styles/text_styles.dart';
 import 'package:siraj/core/utils/constants/app_assets.dart';
 import 'package:siraj/features/hadith/presentation/cubit/hadith_cubit.dart';
@@ -71,7 +72,10 @@ class NawawyView extends StatelessWidget {
                                       .id_ar,
                                   style: getMediumStyle(
                                     color: AppColors.primary,
-                                    fontSize: 16,
+                                    fontSize: context
+                                        .read<FontCubit>()
+                                        .state
+                                        .toDouble(),
                                   ),
                                 ),
                                 const VerticalSpacer(height: 10),
@@ -83,7 +87,10 @@ class NawawyView extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: getSemiBoldStyle(
                                     color: AppColors.primary,
-                                    fontSize: 17,
+                                    fontSize: context
+                                        .read<FontCubit>()
+                                        .state
+                                        .toDouble(),
                                   ),
                                 ),
                                 const VerticalSpacer(height: 6),
@@ -114,7 +121,10 @@ class NawawyView extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: getMediumStyle(
                                         color: AppColors.primary,
-                                        fontSize: 20,
+                                        fontSize: context
+                                            .read<FontCubit>()
+                                            .state
+                                            .toDouble(),
                                       ),
                                     ),
                                   ),
@@ -140,7 +150,10 @@ class NawawyView extends StatelessWidget {
                                       maxLines: 24,
                                       style: getMediumStyle(
                                         color: AppColors.black,
-                                        fontSize: 18,
+                                        fontSize: context
+                                            .read<FontCubit>()
+                                            .state
+                                            .toDouble(),
                                       ),
                                     ),
                                   ),
