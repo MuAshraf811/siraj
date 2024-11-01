@@ -12,10 +12,12 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.1.6
   flutter_compass: ^0.8.0
+  flutter_native_splash: ^2.4.2
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.10+1
   geolocator: ^12.0.0
   location: ^7.0.0
+  logger: ^2.4.0
   provider: ^6.1.2
   qibla_direction: ^1.0.1
   share_plus: ^9.0.0
@@ -27,14 +29,30 @@ dev_dependencies:
   flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.14.1"
+flutter_native_splash:
+  
+  color: "#6B4F5B"
+  image: assets/images/native.png
 
+  
+  android_12:
+   
+    image: assets/images/native.png
+
+    color: "#6B4F5B"
+
+ 
+ 
 flutter:
   uses-material-design: true
   assets:
     - assets/svgs/
     - assets/jsons/
     - assets/images/
-    - assets/images/quran1/
+    - assets/images/quran1/  
+    - assets/images/launcher.png
+    
   fonts:
     - family: Cairo
       fonts:
