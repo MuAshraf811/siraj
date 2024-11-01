@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:siraj/core/styles/text_styles.dart';
 import 'package:siraj/core/utils/constants/app_assets.dart';
 import 'package:siraj/core/utils/constants/app_colors.dart';
-import 'package:siraj/core/widgets/spacers.dart';
 import 'package:siraj/features/quran/controller/quran_cubit.dart';
 
 class TestQuranJson extends StatelessWidget {
