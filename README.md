@@ -4,7 +4,7 @@
 
 # Siraj · سراج
 
-**Your Islamic daily companion — prayer times, Quran, Hadith, Duaa, Adhkar and Islamic radio, all in one offline‑first app.**
+**Your Islamic daily companion — prayer times, Quran, Hadith, Duaa, Adhkar, Qibla and Islamic radio, all in one offline‑first app.**
 
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
 [![Dart](https://img.shields.io/badge/Dart-3.4+-0175C2?logo=dart&logoColor=white)](https://dart.dev)
@@ -19,7 +19,7 @@
 
 ## ✨ Overview
 
-**Siraj** (Arabic for *lantern*) is a comprehensive Islamic daily companion built with Flutter. It brings together everything a Muslim needs throughout the day — accurate, location‑aware **prayer times with adhan notifications**, the full **Quran**, curated **Hadith collections**, a rich **Duaa & Adhkar library**, **Asmaa Allah Al‑Husna**, a digital **tasbih**, and a live **Islamic radio** stream — in a clean, Arabic‑first interface.
+**Siraj** (Arabic for *lantern*) is a comprehensive Islamic daily companion built with Flutter. It brings together everything a Muslim needs throughout the day — accurate, location‑aware **prayer times with adhan notifications**, the full **Quran**, curated **Hadith collections**, a rich **Duaa & Adhkar library**, **Asmaa Allah Al‑Husna**, a **Qibla compass**, a digital **tasbih**, and a live **Islamic radio** stream — in a clean, Arabic‑first interface.
 
 The app is **precision‑engineered for offline‑first access**: all core content (Quran index, Duaa, Adhkar, the 40 Nawawi Hadith, the 99 Names of Allah) ships inside the app as local JSON assets and is served from local storage, so Siraj works fully without connectivity. Network features (prayer timings, extended hadith books, radio) layer on top and degrade gracefully when the device is offline.
 
@@ -47,7 +47,7 @@ The app is **precision‑engineered for offline‑first access**: all core conte
 |---|---|---|
 | 🕌 | **Prayer Times** | Geolocation‑aware daily & monthly timings, next‑prayer countdown on the home screen, and **adhan notifications** at each prayer. Powered by a custom prayer‑time engine integrated with the AlAdhan calculation API. |
 | 📖 | **Quran** | Complete 114‑surah index with Makki/Madani classification, ayah counts, and **diacritic‑insensitive Arabic search** (type `الفاتحه` or `الْفَاتِحَة` — both work). |
-| 📜 | **Hadith** | Curated collections including the **40 Nawawi Hadith** bundled offline, plus the nine major books — Bukhari, Muslim, Abu Dawud, Tirmidhi, Nasa'i, Ibn Majah, Ahmad, Malik, Darimi — with hadith counts, fetched on demand. |
+| 📜 | **Hadith** | The **40 Nawawi Hadith** bundled offline, plus the nine major books — Bukhari, Muslim, Abu Dawud, Tirmidhi, Nasa'i, Ibn Majah, Ahmad, Malik, Darimi — with hadith counts, fetched on demand. |
 | 🤲 | **Duaa Library** | 360+ authentic supplications, browsable and shareable. |
 | 📿 | **Adhkar** | 130+ categories of morning, evening, and situational adhkar with repetition counts. |
 | 🕋 | **Asmaa Allah Al‑Husna** | The 99 Names of Allah with meanings — a random name surfaces on the home screen daily. |
